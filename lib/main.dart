@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'moving_rocks.dart';
+import 'jumping.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.pink,
       ),
       home: const MyHomePage(title: 'Jumping Pikachu'),
     );
@@ -36,21 +37,37 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text('Pika GO!'), centerTitle: true,
       ),
-      body: Center(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Image.asset('assets/images/jump.png',
-            height: 100,
-            width: 100,),
+      body: Container(
+        margin: EdgeInsets.only(top:300, left: 137),
+        child: Column(
+          children:[
             Container(
+              // margin: EdgeInsets.all(5),
+            // child: Image.asset('assets/images/staypikachu.png',
+            height: 100,
+            width: 100,
+          child: jumpingPika(),
+            ),
+
+             Container(
+                 margin: EdgeInsets.all(30),
+                child: ElevatedButton(
+                  onPressed: () {
+                    child: jumpingPika();
+                  },
+                  child: Text('Jump!'),
+            ),),
+
+            Container(
+              margin: EdgeInsets.all(5),
+              padding: EdgeInsets.all(5),
               child: movingRocks(),
             ),
-            ElevatedButton(onPressed: () {},
-                child: Text('Jump!'),),
           ],
         ),
       ),
-    );
+
+
+      );
   }
 }

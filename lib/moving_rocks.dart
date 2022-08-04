@@ -25,13 +25,11 @@ class _movingRocksState extends State<movingRocks> with SingleTickerProviderStat
 
   }
 
-
     @override
     void dispose(){
     super.dispose();
     this.controller.dispose();
   }
-
 
   @override
   Widget build(BuildContext context) {
