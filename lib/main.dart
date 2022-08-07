@@ -38,9 +38,9 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text('Pika GO!'), centerTitle: true,
       ),
       body: Container(
-        margin: EdgeInsets.only(top:300, left: 137),
+        margin: EdgeInsets.only(top:190, left: 100),
         child: Column(
-          children:[
+          children: <Widget>[
             Container(
               // margin: EdgeInsets.all(5),
             // child: Image.asset('assets/images/staypikachu.png',
@@ -49,23 +49,25 @@ class _MyHomePageState extends State<MyHomePage> {
           child: jumpingPika(),
             ),
 
-             Container(
-                 margin: EdgeInsets.all(30),
-                child: ElevatedButton(
-                  onPressed: () {
-                    child: jumpingPika();
-                  },
-                  child: Text('Jump!'),
-            ),),
-
             Container(
-              margin: EdgeInsets.all(5),
-              padding: EdgeInsets.all(5),
+              margin: EdgeInsets.only(top:70),
+              padding: EdgeInsets.all(50),
               child: movingRocks(),
             ),
+
+            ElevatedButton(
+              onPressed: () {
+                jumpingPika();
+              },
+              child: Text('Jump!'),
+            ),
           ],
+
         ),
+
+
       ),
+
 
 
       );
